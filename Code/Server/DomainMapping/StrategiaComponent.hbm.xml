@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false">
+    <class name="Shared.Domain.IStrategiaComponent" table="StrategiaComponent">
+        <id name="id" column="id">
+            <generator class="assigned"/>
+        </id>
+        <discriminator column="Component_type" type="string"/>
+        <many-to-one name="child" class="Shared.Domain.IStrategiaComponent" cascade="all" fetch="join">
+
+        </many-to-one>
+    </class>
+
+    <subclass name="Shared.Domain.Condizioni.BombeRimanentiCondizione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="BombeRimanentiCondizione">
+        <join table="BombeRimanentiCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+
+    <subclass name="Shared.Domain.Condizioni.NemicoAvantiCondizione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="NemicoAvantiCondizione">
+        <join table="NemicoAvantiCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Condizioni.NemicoDestraCondizione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="NemicoDestraCondizione">
+        <join table="NemicoDestraCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Condizioni.NemicoDietroCondizione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="NemicoDietroCondizione">
+        <join table="NemicoDietroCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Condizioni.NemicoSinistraCondizione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="NemicoSinistraCondizione">
+        <join table="NemicoSinistraCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Condizioni.NemicoSottoTiroCondizione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="NemicoSottoTiroCondizione">
+        <join table="NemicoSottoTiroCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Condizioni.OstacoloAdiacenteAvantiCondizione"
+              extends="Shared.Domain.IStrategiaComponent" discriminator-value="OstacoloAdiacenteAvantiCondizione">
+        <join table="OstacoloAdiacenteAvantiCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Condizioni.OstacoloAdiacenteDestraCondizione"
+              extends="Shared.Domain.IStrategiaComponent" discriminator-value="OstacoloAdiacenteDestraCondizione">
+        <join table="OstacoloAdiacenteDestraCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Condizioni.OstacoloAdiacenteDietroCondizione"
+              extends="Shared.Domain.IStrategiaComponent" discriminator-value="OstacoloAdiacenteDietroCondizione">
+        <join table="OstacoloAdiacenteDietroCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Condizioni.OstacoloAdiacenteSinistraCondizione"
+              extends="Shared.Domain.IStrategiaComponent" discriminator-value="OstacoloAdiacenteSinistraCondizione">
+        <join table="OstacoloAdiacenteSinistraCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+
+    <subclass name="Shared.Domain.Condizioni.SullaBombaCondizione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="SullaBombaCondizione">
+        <join table="SullaBombaCondizione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="vera">
+                <column name="Vera"></column>
+            </property>
+            <property name="idType">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Azioni.AvanzaAvantiAzione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="AvanzaAvantiAzione">
+        <join table="AvanzaAvantiAzione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="idTypeAz">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Azioni.AvanzaDestraAzione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="AvanzaDestraAzione">
+        <join table="AvanzaDestraAzione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="idTypeAz">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Azioni.AvanzaSinistraAzione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="AvanzaSinistraAzione">
+        <join table="AvanzaSinistraAzione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="idTypeAz">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Azioni.IndietreggiaAzione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="IndietreggiaAzione">
+        <join table="IndietreggiaAzione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="idTypeAz">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Azioni.LasciaBombaAzione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="LasciaBombeAzione">
+        <join table="LasciaBombeAzione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="idTypeAz">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+    <subclass name="Shared.Domain.Azioni.SparaAzione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="SparaAzione">
+        <join table="SparaAzione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="idTypeAz">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+
+    <subclass name="Shared.Domain.Azioni.TemporeggiaAzione" extends="Shared.Domain.IStrategiaComponent"
+              discriminator-value="TemporeggiaAzione">
+        <join table="TemporeggiaAzione">
+            <key column="Id"></key>
+            <property name="name">
+                <column name="Nome"></column>
+            </property>
+            <property name="description">
+                <column name="Descrizione"></column>
+            </property>
+            <property name="idTypeAz">
+                <column name="ID_TYPE"></column>
+            </property>
+
+        </join>
+    </subclass>
+
+
+</hibernate-mapping>

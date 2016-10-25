@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.UI.JavaFX.View.Battaglia">
+   <children>
+      <HBox prefHeight="87.0" prefWidth="1920.0" style="-fx-background-color: #90CAff;">
+
+         <children>
+            <Button fx:id="indietroButton" mnemonicParsing="false" onMouseClicked="#indietro" prefHeight="86.0" prefWidth="247.0" style="-fx-background-color: RED;" text="Indietro">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Button>
+            <Label prefHeight="129.0" prefWidth="288.0" text="Battaglia">
+               <font>
+                  <Font size="58.0" />
+               </font>
+            </Label>
+            <Label fx:id="numeroTurni" prefHeight="73.0" prefWidth="200.0" text="" />
+         </children>
+      </HBox>
+      <VBox prefHeight="338.0" prefWidth="1920.0" style="-fx-background-color: #01579B;" />
+      <HBox prefHeight="179.0" prefWidth="1920.0" style="-fx-background-color: #01579B;">
+         <children>
+            <VBox prefHeight="115.0" prefWidth="147.0" style="-fx-background-color: #01579B;" />
+            <GridPane fx:id="CampoBattagliaGrid" prefHeight="700" prefWidth="700" style="-fx-grid-lines-visible: true; -fx-border-width: 2px; -fx-border-style: solid;" />
+            <VBox prefHeight="115.0" prefWidth="1071.0" style="-fx-background-color: #01579B;">
+               <children>
+                  <HBox fx:id="RisultatoHbox" prefHeight="132.0" prefWidth="1011.0">
+                     <children>
+                        <Label prefHeight="115.0" prefWidth="279.0" text="Risultato :" textFill="WHITE">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </Label>
+                        <Label fx:id="risultatoBattaglia" prefHeight="115.0" prefWidth="206.0" textFill="WHITE">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children></VBox>
+         </children>
+      </HBox>
+      <VBox prefHeight="579.0" prefWidth="1920.0" style="-fx-background-color: #01579B;" />
+      <HBox prefHeight="155.0" prefWidth="1920.0" style="-fx-background-color: #01579B;" />
+   </children>
+</VBox>

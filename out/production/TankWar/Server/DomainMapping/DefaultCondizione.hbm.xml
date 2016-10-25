@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Shared.Domain.Condizioni.DefaultCondizione" table="DefaultCondizione">
+        <id name="id" column="id">
+            <generator class="assigned"/>
+        </id>
+
+        <property name="name" type="string">
+            <column name="Nome"/>
+        </property>
+        <property name="description" type="string">
+            <column name="Descrizione"/>
+        </property>
+        <property name="idType" type="string">
+            <column name="idType"/>
+        </property>
+        <property name="vera" type="boolean">
+            <column name="vera"/>
+        </property>
+
+        <many-to-one name="child" class="Shared.Domain.IStrategiaComponent" column="child" cascade="all"></many-to-one>
+
+
+    </class>
+</hibernate-mapping>

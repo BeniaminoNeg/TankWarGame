@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Shared.Domain.Player" table="Players">
+        <id name="id" column="id">
+            <generator class="assigned"/>
+        </id>
+        <property name="nome">
+            <column name="Nome"></column>
+        </property>
+
+        <many-to-one name="tank" class="Shared.Domain.Tank" fetch="join">
+            <column name="Tank"></column>
+        </many-to-one>
+        
+        <list name="strategieList" cascade="all" fetch="join">
+            <key column="player_id"/>
+            <list-index column="idx"></list-index>
+            <one-to-many class="Shared.Domain.Strategia"/>
+        </list>
+
+
+    </class>
+</hibernate-mapping>

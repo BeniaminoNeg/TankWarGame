@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="Shared.Domain.Caselle.ICasella" table="Caselle">
+        <id name="id" column="id">
+            <generator class="assigned"/>
+        </id>
+
+
+
+        <discriminator column="Caselle_type" type="string"/>
+
+    </class>
+
+    <subclass name="Shared.Domain.Caselle.MuroCasella" extends="Shared.Domain.Caselle.ICasella"
+              discriminator-value="MuroCasella">
+        <join table="MuroCasella">
+            <key column="Id"></key>
+            <many-to-one name="Posizione" column="Posizione" class="Shared.Domain.Posizione" cascade="all" lazy="false"></many-to-one>
+        </join>
+
+
+    </subclass>
+
+    <subclass name="Shared.Domain.Caselle.PlainCasella" extends="Shared.Domain.Caselle.ICasella"
+              discriminator-value="PlainCasella">
+        <join table="PlainCasella">
+            <key column="Id"></key>
+            <many-to-one name="Posizione" column="Posizione" class="Shared.Domain.Posizione" cascade="all" lazy="false"></many-to-one>
+        </join>
+    </subclass>
+
+
+</hibernate-mapping>

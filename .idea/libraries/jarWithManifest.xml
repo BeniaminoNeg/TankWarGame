@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jarWithManifest">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../reflections-master/src/test/resources/jarWithManifest.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
